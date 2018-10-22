@@ -20,9 +20,8 @@ class Profile extends React.Component { // eslint-disable-line react/prefer-stat
     render() {
         return (
             <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
+                <DropdownToggle nav caret className="navbar-user">
                     <img className="rounded-circle" src="https://profiles.csh.rit.edu/image/matted" width={32} height={32} />
-                    &nbsp;
                     Username
                     <span className="caret"/>
                 </DropdownToggle>
