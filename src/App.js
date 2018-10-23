@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 const Home = () => (
     <div>
-        <NavBar/>
+        <p>Home</p>
     </div>
 )
 
@@ -13,6 +13,7 @@ class App extends Component {
         return (
             <Router>
                 <div>
+                    <NavBar/>
                     <Route exact path="/" component={Home}/>
                 </div>
             </Router>
