@@ -10,6 +10,14 @@ const Create = () => (
     </Container>
 )
 
+const DB = ({match}) => {
+    console.log(match.params.id)
+    return (
+    <Container>
+        <p>Create</p>
+    </Container>)
+}
+
 class App extends Component {
     render() {
         return (
@@ -18,6 +26,7 @@ class App extends Component {
                     <NavBar/>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/create" component={Create} />
+                    <Route path="/db/:id" component={DB} />
                 </Container>
             </Router>
         );

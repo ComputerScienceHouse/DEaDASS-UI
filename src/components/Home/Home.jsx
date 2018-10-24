@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import VMCard from './VMCard';
+import DBCard from './DBCard';
 
 const VMData = [
     {
@@ -22,19 +22,23 @@ class Home extends Component {
         console.log(props);
 
         this.state = {
-            VMCards: null
+            DBCards: null
         };
     }
 
     componentDidMount() {
-        this.renderVMCards();
+        this.renderDBCards();
     }
 
-    renderVMCards() {
+    handleSelect = (event) => {
+
+    }
+
+    renderDBCards() {
         // Not sure where we will be keeping data
-        const VMCards = VMData.map((item, index) => {
+        const DBCards = VMData.map((item, index) => {
             return (
-                <VMCard
+                <DBCard
                     key={index}
                     id={item.id}
                     onClick={this.handleSelect}
@@ -42,18 +46,17 @@ class Home extends Component {
                 />
             );
         });
-        this.setState({VMCards});
+        this.setState({DBCards});
     }
 
     render() {
         console.warn(this.state)
         return (
             <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                {this.state.VMCards}
+                {this.state.DBCards}
             </div>
         )
     }
-
 }
 
 export default Home;
