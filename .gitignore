@@ -2,6 +2,7 @@
 gradlew
 gradlew.bat
 DEdDASS.iml
+package-lock.json
 
 # testing
 /coverage
@@ -26,3 +27,4 @@ yarn-error.log*
 # Project Specific
 build
 node_modules
+dist
