@@ -3,20 +3,13 @@ import NavBar from './components/NavBar';
 import {Container,} from 'reactstrap';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Home from './components/Home';
+import DBInfo from './components/DBInfo';
 
 const Create = () => (
     <Container>
         <p>Create</p>
     </Container>
 )
-
-const DB = ({match}) => {
-    console.log(match.params.id)
-    return (
-    <Container>
-        <p>Create</p>
-    </Container>)
-}
 
 class App extends Component {
     render() {
@@ -26,7 +19,7 @@ class App extends Component {
                     <NavBar/>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/create" component={Create} />
-                    <Route path="/db/:id" component={DB} />
+                    <Route path="/db/:id" component={DBInfo} />
                 </Container>
             </Router>
         );
