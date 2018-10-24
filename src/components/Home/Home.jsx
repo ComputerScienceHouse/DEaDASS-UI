@@ -5,12 +5,14 @@ const VMData = [
     {
         id: 1234,
         title: "Blah Blah",
-        vmType: "MongoDB"
+        vmType: "MongoDB",
+        description: "An important database that holds all of CSH lost traditions"
     },
     {
         id: 1235,
         title: "Bluh",
-        vmType: "MySQL"
+        vmType: "MySQL",
+        description: "An important database that holds all CSHers SSNs"
     }
 ]
 
@@ -29,7 +31,8 @@ class Home extends Component {
     }
 
     renderVMCards() {
-        const VMCards = this.props.list.map((item, index) => {
+        // Not sure where we will be keeping data
+        const VMCards = VMData.map((item, index) => {
             return (
                 <VMCard
                     key={index}
