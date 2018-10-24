@@ -1,10 +1,13 @@
 import React, {Component} from 'react';
-import NavBar from './components/NavBar';
-import {Container,} from 'reactstrap';
+import { Container } from 'reactstrap';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-import Home from './components/Home';
-import DBInfo from './components/DBInfo';
-import Create from './components/Create';
+
+import {
+  Create,
+  DBInfo,
+  Home,
+  NavBar
+} from './components';
 
 class App extends Component {
     render() {
