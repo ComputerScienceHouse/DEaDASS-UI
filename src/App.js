@@ -1,14 +1,8 @@
 import React, {Component} from 'react';
-import NavBar from "./components/NavBar";
+import NavBar from './components/NavBar';
 import {Container,} from 'reactstrap';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
-
-// Temporary constants to set up basic routing
-const Home = () => (
-    <Container>
-        <p>Home</p>
-    </Container>
-)
+import Home from './components/Home'
 
 const Create = () => (
     <Container>
