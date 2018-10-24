@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { Container } from 'reactstrap';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import {
   Create,
   DBInfo,
   Home,
-  NavBar
+  NavBar,
 } from './components';
 
 class App extends Component {
