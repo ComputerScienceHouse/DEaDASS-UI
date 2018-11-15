@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 class DBInfo extends Component {
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props);
+    }
 
-  render() {
-    return <div>{this.props.match.params.id}</div>
-  }
+    render() {
+        return <div>{this.props.match.params.id}</div>
+    }
 }
 
 export default DBInfo;

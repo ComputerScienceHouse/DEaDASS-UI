@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import DBCard from './DBCard';
+import {CardDeck, Col} from "reactstrap";
 
 const VMData = [
     {
@@ -13,6 +14,12 @@ const VMData = [
         title: "Bluh",
         vmType: "MySQL",
         description: "An important database that holds all CSHers SSNs"
+    },
+    {
+        id: 1255,
+        title: "Guh",
+        vmType: "Postgres",
+        description: "An important database that holds all CSHers \"media\" preferences"
     }
 ]
 
@@ -38,12 +45,14 @@ class Home extends Component {
         // Not sure where we will be keeping data
         const DBCards = VMData.map((item, index) => {
             return (
-                <DBCard
-                    key={index}
-                    id={item.id}
-                    onClick={this.handleSelect}
-                    {...item}
-                />
+                <Col>
+                    <DBCard
+                        key={index}
+                        id={item.id}
+                        onClick={this.handleSelect}
+                        {...item}
+                    />
+                </Col>
             );
         });
         this.setState({DBCards});
@@ -53,7 +62,7 @@ class Home extends Component {
         console.warn(this.state)
         return (
             <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                {this.state.DBCards}
+                <CardDeck>{this.state.DBCards}</CardDeck>
             </div>
         )
     }

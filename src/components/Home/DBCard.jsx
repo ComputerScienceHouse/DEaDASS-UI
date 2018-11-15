@@ -1,16 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
+import {Card, CardBody, CardHeader, CardText, CardTitle} from "reactstrap";
 
 export default ({id, title, description, vmType}) => {
     return (
-        <Link to={`/db/${id}`}>
-          <div class="card border-primary mb-3" style={{maxWidth: '20rem', margin: '30px 40px', cursor: 'pointer'}}>
-              <div class="card-header">{vmType}</div>
-              <div class="card-body text-primary">
-                  <h4 class="card-title">{title}</h4>
-                  <p class="card-text">{description}</p>
-              </div>
-          </div>
-        </Link>
+        <Card>
+            <CardHeader>
+                {vmType}
+            </CardHeader>
+            <CardBody>
+                <Link to={`/db/${id}`}>
+                    <CardTitle>{title}</CardTitle>
+                </Link>
+                <CardText>{description}</CardText>
+            </CardBody>
+        </Card>
     );
 };

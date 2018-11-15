@@ -1,5 +1,5 @@
 import React from 'react';
-import {DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown,} from 'reactstrap';
+import {DropdownItem, DropdownMenu, DropdownToggle, UncontrolledDropdown} from 'reactstrap';
 
 class Profile extends React.Component {
     constructor(props) {
