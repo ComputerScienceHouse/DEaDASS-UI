@@ -18,12 +18,22 @@ class Profile extends React.Component {
     }
 
     render() {
+        if (!this.props.name || !this.props.username) return null;
+
+        const { name, username } = this.props;
+
         return (
             <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret className="navbar-user">
-                    <img className="rounded-circle" src="https://profiles.csh.rit.edu/image/matted"
-                         width={32} height={32}/>
-                    Username
+                    <img
+                      className="rounded-circle"
+                      src={`https://profiles.csh.rit.edu/image/${username}`}
+                      alt=""
+                      aria-hidden={true}
+                      width={32}
+                      height={32}
+                    />
+                    {name} ({username})
                     <span className="caret"/>
                 </DropdownToggle>
                 <DropdownMenu>
