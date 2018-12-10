@@ -1,8 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import { OidcProvider } from "redux-oidc";
+import configureStore from "./store";
+import userManager from "./userManager";
+import App from "./components/App";
+import "./index.css";
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+ReactDOM.render(
+  <Provider store={configureStore}>
+    <OidcProvider store={configureStore} userManager={userManager}>
+      <App/>
+    </OidcProvider>
+  </Provider>,
+  document.getElementById("root")
+);
