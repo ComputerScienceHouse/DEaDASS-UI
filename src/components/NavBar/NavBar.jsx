@@ -1,5 +1,6 @@
 import React from 'react';
-import {Collapse, Container, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem, NavLink,} from 'reactstrap';
+import {Collapse, Container, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem} from 'reactstrap';
+import {NavLink} from 'react-router-dom'
 import UserProfile from '../../containers/UserProfile';
 
 class NavBar extends React.Component {
@@ -22,17 +23,17 @@ class NavBar extends React.Component {
     render() {
         return (
             <div>
-                <Navbar color="primary" dark expand="md" fixed="top">
+                <Navbar color="primary" dark expand="lg" fixed="top">
                     <Container>
                         <NavbarBrand href="/">DEaDASS</NavbarBrand>
                         <NavbarToggler onClick={this.toggle}/>
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
-                                    <NavLink href="/">Home</NavLink>
+                                    <NavLink to="/" className={"nav-link"}>Home</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink href="/create/">Create</NavLink>
+                                    <NavLink to="/create/" className={"nav-link"}>Create</NavLink>
                                 </NavItem>
                             </Nav>
                             <Nav navbar className="ml-auto">
