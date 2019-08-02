@@ -1,27 +1,9 @@
 import React, {Component} from 'react';
+import { connect } from "react-redux";
 import DBCard from './DBCard';
+import InfoSpinner from '../InfoSpinner';
 import {CardDeck, Col} from "reactstrap";
-
-const VMData = [
-    {
-        id: 1234,
-        title: "Blah Blah",
-        vmType: "MongoDB",
-        description: "An important database that holds all of CSH lost traditions"
-    },
-    {
-        id: 1235,
-        title: "Bluh",
-        vmType: "MySQL",
-        description: "An important database that holds all CSHers SSNs"
-    },
-    {
-        id: 1255,
-        title: "Guh",
-        vmType: "Postgres",
-        description: "An important database that holds all CSHers \"media\" preferences"
-    }
-]
+import {fetchDatabases} from '../../actions/get';
 
 class Home extends Component {
     constructor(props) {
@@ -33,39 +15,56 @@ class Home extends Component {
         };
     }
 
-    componentDidMount() {
-        this.renderDBCards();
-    }
-
-    handleSelect = (event) => {
-
-    }
-
     renderDBCards() {
-        // Not sure where we will be keeping data
-        const DBCards = VMData.map((item, index) => {
+        const DBCards = this.props.databases.map((item, index) => {
             return (
                 <Col>
                     <DBCard
                         key={index}
-                        id={item.id}
                         onClick={this.handleSelect}
                         {...item}
                     />
                 </Col>
             );
         });
-        this.setState({DBCards});
+        return DBCards
+    }
+
+    componentDidMount() {
+        if (this.props.oidc.user && !this.props.databases) {
+            this.props.getDatabases(this.props.oidc.user.access_token);
+        }
+    }
+
+    handleSelect = (event) => {
+
     }
 
     render() {
-        console.warn(this.state)
+        if (!this.props.databases) {
+            return (<InfoSpinner>Loading databases</InfoSpinner>);
+        } else if (!this.props.databases.length) {
+            return (<h2>No databases found</h2>);
+        }
+        this.renderDBCards();
         return (
             <div style={{display: 'flex', flexWrap: 'wrap'}}>
-                <CardDeck>{this.state.DBCards}</CardDeck>
+                <CardDeck>{this.renderDBCards()}</CardDeck>
             </div>
         )
     }
 }
 
-export default Home;
+const mapStateToProps = state => ({
+    oidc: state.oidc,
+    databases: state.apis.databases
+});
+  
+const mapDispatchToProps = dispatch => ({
+    getDatabases: access_token => fetchDatabases(dispatch, access_token)
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Home);

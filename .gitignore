@@ -28,6 +28,3 @@ yarn-error.log*
 build
 node_modules
 dist
-
-# Excluding yarn since prod doesn't use it
-yarn.lock
