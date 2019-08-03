@@ -1,52 +1,52 @@
-import React from 'react';
-import {Collapse, Container, Nav, Navbar, NavbarBrand, NavbarToggler, NavItem} from 'reactstrap';
-import {NavLink} from 'react-router-dom'
-import UserProfile from '../../containers/UserProfile';
+import React from 'react'
+import { Collapse, Container, Nav, Navbar, NavbarToggler, NavItem } from 'reactstrap'
+import { NavLink } from 'react-router-dom'
+import UserProfile from '../../containers/UserProfile'
 
 class NavBar extends React.Component {
-    constructor(props) {
-        super(props);
+  constructor (props) {
+    super(props)
 
-        this.state = {
-            isOpen: false,
-        };
-        
-        this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
     }
 
-    toggle() {
-        this.setState({
-            isOpen: !this.state.isOpen,
-        });
-    }
+    this.toggle = this.toggle.bind(this)
+  }
 
-    render() {
-        return (
-            <div>
-                <Navbar color="primary" dark expand="lg" fixed="top">
-                    <Container>
-                        <NavLink to="/" className={"navbar-brand"}>DEaDASS</NavLink>
-                        <NavbarToggler onClick={this.toggle}/>
-                        <Collapse isOpen={this.state.isOpen} navbar>
-                            <Nav navbar>
-                                <NavItem>
-                                    <NavLink to="/" className={"nav-link"}>Home</NavLink>
-                                </NavItem>
-                                <NavItem>
-                                    <NavLink to="/create/" className={"nav-link"}>Create</NavLink>
-                                </NavItem>
-                            </Nav>
-                            <Nav navbar className="ml-auto">
-                                <UserProfile/>
-                            </Nav>
-                        </Collapse>
-                    </Container>
-                </Navbar>
-            </div>
-        );
-    }
+  toggle () {
+    this.setState({
+      isOpen: !this.state.isOpen
+    })
+  }
+
+  render () {
+    return (
+      <div>
+        <Navbar color="primary" dark expand="lg" fixed="top">
+          <Container>
+            <NavLink to="/" className={'navbar-brand'}>DEaDASS</NavLink>
+            <NavbarToggler onClick={this.toggle}/>
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav navbar>
+                <NavItem>
+                  <NavLink to="/" className={'nav-link'}>Home</NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink to="/create/" className={'nav-link'}>Create</NavLink>
+                </NavItem>
+              </Nav>
+              <Nav navbar className="ml-auto">
+                <UserProfile/>
+              </Nav>
+            </Collapse>
+          </Container>
+        </Navbar>
+      </div>
+    )
+  }
 }
 
-NavBar.propTypes = {};
+NavBar.propTypes = {}
 
-export default NavBar;
+export default NavBar

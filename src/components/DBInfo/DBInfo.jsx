@@ -1,13 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class DBInfo extends Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return <div>{this.props.match.params.name}</div>
-    }
+  render () {
+    return <div>{this.props.match.params.name}</div>
+  }
 }
 
-export default DBInfo;
+DBInfo.propTypes = {
+  match: PropTypes.any
+}
+
+export default DBInfo

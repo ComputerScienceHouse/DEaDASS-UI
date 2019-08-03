@@ -1,3 +1,3 @@
-import DBInfo from './DBInfo';
+import DBInfo from './DBInfo'
 
-export default DBInfo;
+export default DBInfo

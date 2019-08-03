@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import { Container } from 'reactstrap';
+import React, { Component } from 'react'
+import { Container } from 'reactstrap'
 
-import InputForm from './InputForm';
+import InputForm from './InputForm'
 
 class Create extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
-    this.state = {};
+    this.state = {}
   }
 
   handleOnChange = (event) => {
-    this.setState({[event.target.id]: event.target.value})
+    this.setState({ [event.target.id]: event.target.value })
   }
 
-  render() {
+  render () {
     return (
       <Container>
         <InputForm handleOnChange={this.handleOnChange} />
@@ -23,4 +23,4 @@ class Create extends Component {
   }
 }
 
-export default Create;
+export default Create

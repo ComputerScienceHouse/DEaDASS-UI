@@ -8,7 +8,7 @@ It is written in Java with Spring.
 This repository hosts the DEaDASS UI, the backend may be found [here](https://github.com/ComputerScienceHouse/DEaDASS).
 
 ## Local Development
-You're going to need [node]() and ideally use [nvm]().
+You're going to need [node](https://nodejs.org/en/) and ideally use [nvm](https://github.com/nvm-sh/nvm).
 
 ### Setup with nvm
 
@@ -19,7 +19,7 @@ npm install
 ```
 
 ### Set up API
-By default the application will try to make calls against the production [DEaDASS API](). If you need to test against a local backend, you're going to need to override the environment variables
+By default the application will try to make calls against the production [DEaDASS API](https://github.com/ComputerScienceHouse/DEaDASS). If you need to test against a local backend, you're going to need to override the environment variables
 
 ```
 cp .env .env.local

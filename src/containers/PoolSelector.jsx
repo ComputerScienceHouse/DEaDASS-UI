@@ -1,15 +1,15 @@
 import { connect } from 'react-redux'
-import App from '../components/App'
+import SelectPool from '../components/Create/SelectPool'
 
 const mapStateToProps = state => ({
-  isRTP: (((state.oidc.user || {}).profile || {}).groups || []).includes('rtp'),
-  oidc: state.oidc
+  username: ((state.oidc.user || {}).profile || {}).preferred_username
 })
 
 const mapDispatchToProps = dispatch => ({
+  dispatch
 })
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(SelectPool)

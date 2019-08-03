@@ -1,8 +1,18 @@
-import React from "react";
-import "./spinner.css";
+import React from 'react'
+import PropTypes from 'prop-types'
+import './spinner.css'
 
-const Spinner = ({ className }) => (
-  <div className={`spinner ${className}`} />
-);
+class Spinner extends React.Component {
+  render () {
+    const { className } = this.props
+    return (
+      <div className={`spinner ${className}`} />
+    )
+  }
+}
 
-export default Spinner;
+Spinner.propTypes = {
+  className: PropTypes.string
+}
+
+export default Spinner

@@ -1,4 +1,4 @@
-import { createUserManager } from "redux-oidc";
+import { createUserManager } from 'redux-oidc'
 
 const userManagerConfig = {
   client_id: 'deadass',
@@ -10,8 +10,8 @@ const userManagerConfig = {
   automaticSilentRenew: true,
   filterProtocolClaims: true,
   loadUserInfo: true
-};
+}
 
-const userManager = createUserManager(userManagerConfig);
+const userManager = createUserManager(userManagerConfig)
 
-export default userManager;
+export default userManager
